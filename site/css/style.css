@@ -1,58 +1,197 @@
-html { font-size: 24px; scroll-behavior: smooth; }
+/* =========================================================
+   NOVO TEMA: DARK MODE (TECNOLOGIA / IHC)
+   ========================================================= */
+
+/* 1. Tipografia e Leitura (Mantendo a regra ISO/WCAG) */
+html {
+    font-size: 24px;
+    scroll-behavior: smooth;
+}
+
+/* 2. Cores: Fundo escuro com texto claro (Contraste super alto) */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #1a1a1a;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background-color: #0f172a; /* Azul muito escuro (Slate) */
+    color: #f1f5f9; /* Texto cinza bem claro/branco */
     line-height: 1.6;
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
+/* 3. Navegação por Teclado: Foco visível (Mantendo a regra de acessibilidade) */
 a:focus, button:focus {
-    outline: 4px solid #0056b3; outline-offset: 4px; background-color: #e6f2ff;
+    outline: 4px solid #38bdf8;
+    outline-offset: 4px;
+    background-color: rgba(56, 189, 248, 0.2);
 }
 
-header, main, footer { max-width: 900px; margin: 0 auto; padding: 20px; }
+/* =========================================================
+   ESTRUTURA E LAYOUT RESPONSIVO
+   ========================================================= */
+header, main, footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+/* Cabeçalhos */
 header {
-    text-align: center; background-color: #ffffff;
-    border-bottom: 4px solid #2d7a3e; border-radius: 0 0 8px 8px;
-    margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-bottom: 4px solid #38bdf8; /* Detalhe em Azul Neon (Cyan) */
+    border-radius: 0 0 16px 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    padding: 30px 20px;
 }
-header h1 { font-size: 1.8rem; color: #2d7a3e; margin-bottom: 5px; }
-header h2 { font-size: 1.2rem; color: #444; font-weight: normal; }
 
-.header-interno h2 { color: #2d7a3e; font-weight: bold; margin-bottom: 15px;}
+header h1 {
+    font-size: 1.8rem;
+    color: #38bdf8;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
+header h2 {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    font-weight: 300;
+}
+
+.header-interno h2 {
+    color: #38bdf8;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Imagens */
 figure { margin: 20px 0; text-align: center; }
-figure img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #ccc; }
-figcaption { font-size: 0.85rem; color: #555; margin-top: 10px; font-style: italic; }
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #334155;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+figcaption {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 10px;
+    font-style: italic;
+}
 
+/* Navegação da Página Inicial (Menu em Grid) */
 .menu-home ul {
-    list-style: none; padding: 0; display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
 }
+
 .menu-home a {
-    display: block; padding: 15px; text-align: center;
-    background-color: #ffffff; color: #2d7a3e; text-decoration: none;
-    font-weight: bold; border-radius: 8px; border: 2px solid #2d7a3e;
-    transition: all 0.3s;
+    display: block;
+    padding: 18px;
+    text-align: center;
+    background-color: #1e293b; /* Fundo dos botões */
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    transition: all 0.3s ease; /* Animação suave */
 }
-.menu-home a:hover { background-color: #2d7a3e; color: #ffffff; }
-.btn-referencias { background-color: #333 !important; color: #fff !important; border-color: #333 !important; }
-.btn-referencias:hover { background-color: #000 !important; }
 
-nav ul { list-style: none; padding: 0; display: flex; gap: 15px; justify-content: center; }
-nav a { color: #2d7a3e; text-decoration: none; font-weight: bold; padding: 8px 12px; border-radius: 4px; }
-nav a:hover { background-color: #e6f2ff; text-decoration: underline; }
+/* Efeito ao passar o mouse na página inicial */
+.menu-home a:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+    transform: translateY(-4px); /* Botão "pula" para cima */
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3); /* Brilho azul */
+}
 
+.btn-referencias {
+    background-color: #3b82f6 !important;
+    color: #fff !important;
+    border-color: #3b82f6 !important;
+}
+
+.btn-referencias:hover {
+    background-color: #2563eb !important;
+}
+
+/* Navegação das Páginas Internas */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+nav a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: rgba(56, 189, 248, 0.1); /* Fundo azul transparente */
+    border: 1px solid transparent;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+/* Seções de Conteúdo (Os Cards) */
 section {
-    background-color: #ffffff; margin-bottom: 40px; padding: 30px;
-    border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: #1e293b;
+    margin-bottom: 40px;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    border: 1px solid #334155;
 }
-section h3 { color: #2d7a3e; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; font-size: 1.4rem; }
-p { margin-bottom: 15px; }
 
-footer {
-    background-color: #333; color: #fff; padding: 20px;
-    border-radius: 8px 8px 0 0; text-align: center; font-size: 0.9rem;
+section h3 {
+    color: #38bdf8;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 12px;
+    font-size: 1.4rem;
+    margin-top: 0;
 }
-footer a { color: #82caff; }
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #020617; /* Preto/Azul extremo */
+    color: #94a3b8;
+    padding: 25px;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid #334155;
+}
+
+footer a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo da lista de Referências */
+.referencias li {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    word-break: break-word;
+}
